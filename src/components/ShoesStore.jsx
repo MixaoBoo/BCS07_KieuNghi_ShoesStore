@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ProductList from "./ProductList";
 import Modal from "./Modal";
-import { Outlet } from "react-router-dom";
 
 export default class ShoesStore extends Component {
   products = [
@@ -158,7 +157,7 @@ export default class ShoesStore extends Component {
       image: "",
     },
   };
-  handleGetStateModal = (item) => {
+  setStateModal = (item) => {
     this.setState({ stateModal: item });
   };
   render() {
@@ -175,7 +174,7 @@ export default class ShoesStore extends Component {
           <div className="col-8">
             <ProductList
               productsData={this.products}
-              handleGetStateModal={this.handleGetStateModal}
+              setStateModal={this.setStateModal}
             />
             <Modal item={this.state.stateModal} />
           </div>

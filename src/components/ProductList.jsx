@@ -6,10 +6,7 @@ export default class ProductList extends Component {
     let renderProductList = this.props.productsData.map((item, index) => {
       return (
         <div className="col-4 gap-3" key={index}>
-          <ProductItem
-            item={item}
-            handleGetStateModal={this.props.handleGetStateModal}
-          />
+          <ProductItem item={item} setStateModal={this.props.setStateModal} />
         </div>
       );
     });

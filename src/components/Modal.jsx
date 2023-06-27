@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export default class Modal extends Component {
   render() {
-    let url = window.location.href.split("/");
-    let id = url[url.length - 1];
+    let { item } = this.props;
+    console.log("item: ", item);
     return (
       <div
         className="modal"
@@ -15,14 +15,11 @@ export default class Modal extends Component {
         aria-labelledby="modalTitleId"
         aria-hidden="true"
       >
-        <div
-          className="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
-          role="document"
-        >
+        <div className="modal-dialog modal-fullscreen" role="document">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header text-center">
               <h5 className="modal-title" id="modalTitleId">
-                Modal title
+                Detail Information
               </h5>
               <button
                 type="button"
@@ -31,7 +28,20 @@ export default class Modal extends Component {
                 aria-label="Close"
               />
             </div>
-            <div className="modal-body">Body</div>
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-6">
+                  <img src={this.props.item.image} alt="" />
+                </div>
+                <div className="col-6">
+                  <h2>{this.props.item.name}</h2>
+                  <h5>${this.props.item.price}</h5>
+                  <p>Quantity: {this.props.item.quantity}</p>
+                  <p>{this.props.item.description}</p>
+                  <p>{this.props.item.shortDescription}</p>
+                </div>
+              </div>
+            </div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -40,8 +50,9 @@ export default class Modal extends Component {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
-                Save
+              <button type="button" className="btn btn-success">
+                <i className="fa-solid fa-circle-plus me-2"></i>
+                ADD
               </button>
             </div>
           </div>
