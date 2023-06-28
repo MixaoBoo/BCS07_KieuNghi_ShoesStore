@@ -46,6 +46,7 @@ export default class Modal extends Component {
                       {this.props.content.description}
                     </p>
                     <p className="productBrief">
+                      <i class="fa-regular fa-circle-check me-1"></i>
                       {this.props.content.shortDescription}
                     </p>
                   </div>
