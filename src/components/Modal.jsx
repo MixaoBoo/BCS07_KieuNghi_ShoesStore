@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export default class Modal extends Component {
   render() {
-    let { item } = this.props;
-    console.log("item: ", item);
+    let { content } = this.props;
+    console.log("content: ", content);
     return (
       <div
         className="modal"
@@ -17,7 +17,7 @@ export default class Modal extends Component {
       >
         <div className="modal-dialog modal-fullscreen" role="document">
           <div className="modal-content">
-            <div className="modal-header text-center">
+            <div className="modal-header">
               <h5 className="modal-title" id="modalTitleId">
                 Detail Information
               </h5>
@@ -29,16 +29,26 @@ export default class Modal extends Component {
               />
             </div>
             <div className="modal-body">
-              <div className="row">
-                <div className="col-6">
-                  <img src={this.props.item.image} alt="" />
-                </div>
-                <div className="col-6">
-                  <h2>{this.props.item.name}</h2>
-                  <h5>${this.props.item.price}</h5>
-                  <p>Quantity: {this.props.item.quantity}</p>
-                  <p>{this.props.item.description}</p>
-                  <p>{this.props.item.shortDescription}</p>
+              <div className="container">
+                <div className="row align-items-center w-100">
+                  <div className="col-6 img-modal">
+                    <img src={this.props.content.image} alt="" />
+                  </div>
+                  <div className="col-6 modal-detail">
+                    <h2 className="productName">{this.props.content.name}</h2>
+                    <h5 className="productPrice">
+                      ${this.props.content.price}
+                    </h5>
+                    <p className="productQuantity">
+                      Quantity <span>{this.props.content.quantity}</span>
+                    </p>
+                    <p className="productDescript">
+                      {this.props.content.description}
+                    </p>
+                    <p className="productBrief">
+                      {this.props.content.shortDescription}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -50,8 +60,8 @@ export default class Modal extends Component {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-success">
-                <i className="fa-solid fa-circle-plus me-2"></i>
+              <button type="button" className="btn-add">
+                <i className="fa-solid fa-circle-plus me-1"></i>
                 ADD
               </button>
             </div>

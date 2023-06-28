@@ -146,7 +146,7 @@ export default class ShoesStore extends Component {
     },
   ];
   state = {
-    stateModal: {
+    productDetail: {
       id: "",
       name: "",
       alias: "",
@@ -158,25 +158,29 @@ export default class ShoesStore extends Component {
     },
   };
   setStateModal = (item) => {
-    this.setState({ stateModal: item });
+    this.setState({ productDetail: item });
   };
   render() {
     return (
       <div>
-        <h1 className="text-center mb-5 fw-1">Shoes Shop</h1>
+        <h1 className="title text-center mb-5 fw-1">Shoes Shop</h1>
         <div className="row">
-          <div className="col-4 d-flex flex-column align-items-center">
+          <div className="col-3 d-flex">
             <ul style={{ listStyle: "none" }} className="m-auto h-100">
-              <li>Home</li>
-              <li>Shop</li>
+              <li className="custom-list">
+                <i class="fa-solid fa-house me-2"></i>Home
+              </li>
+              <li className="custom-list">
+                <i class="fa-solid fa-basket-shopping me-2"></i>Shop
+              </li>
             </ul>
           </div>
-          <div className="col-8">
+          <div className="col-9">
             <ProductList
               productsData={this.products}
               setStateModal={this.setStateModal}
             />
-            <Modal item={this.state.stateModal} />
+            <Modal content={this.state.productDetail} />
           </div>
         </div>
       </div>

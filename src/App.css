@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  font-family: "Rajdhani", sans-serif !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,17 +38,136 @@
     transform: rotate(360deg);
   }
 }
+
+/* PRODUCTITEM */
+.custom-list {
+  padding: 15px 80px;
+  background-color: #344e41;
+  border: 1px solid #344e41;
+  border-radius: 5px;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+.custom-list:hover {
+  background-color: #ffff;
+  color: #344e41;
+}
+.title {
+  background-color: #344e41;
+  color: #fff;
+  padding: 20px 0;
+  font-weight: 700;
+}
+
 .btn-cart {
   padding: 10px;
   border-radius: 2px;
   width: 80%;
   color: #ffff;
   font-weight: 500;
-  background-color: #0f0f61;
-  border: 1px solid #0f0f61;
+  background-color: #344e41;
+  border: 1px solid #344e41;
   transition: all 0.5s linear;
 }
 .btn-cart:hover {
   background-color: #ffff;
-  color: #0f0f61;
+  color: #344e41;
+}
+.card-title {
+  font-weight: 600;
+}
+.card-text {
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 16px;
+}
+.img-container {
+  padding: 20px;
+}
+.card {
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+.card-img-top {
+  border-radius: 5px;
+  background-color: #dad7cd;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+.card-body {
+  padding-top: 0;
+}
+/* MODAL */
+.modal-header,
+.modal-footer {
+  background-color: #ccd5ae;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #344e41;
+}
+.btn-add {
+  background-color: #344e41;
+  color: #ffff;
+  border: 1px solid #344e41;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0s linear;
+}
+.btn-add:hover {
+  background-color: #588157;
+  border: 1px solid #588157;
+}
+.modal-body {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.img-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dad7cd;
+  /* padding: 20px; */
+  border-radius: 10px;
+  box-shadow: 0 7px 29px 0 hsla(240, 5%, 41%, 0.2);
+}
+.productName {
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #282c34;
+}
+.productPrice {
+  margin-left: 20px;
+  font-size: 30px;
+  color: #ff0000;
+}
+.productQuantity,
+.productDescript {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.productQuantity span {
+  padding: 8px 20px;
+  margin-left: 10px;
+  border: 1px solid #282c34;
+}
+.productDescript {
+  font-weight: 600;
+}
+.productBrief {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
 }
